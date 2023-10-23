@@ -13,7 +13,7 @@ services:
     depends_on: 
       - mysqldb
     networks:
-      #- nginx_default
+      - nginx_default
       - java-db
 
   mysqldb: 
@@ -29,13 +29,13 @@ services:
       - mysqldata:/var/lib/mysql
       
     networks:
-    #  - nginx_default
+      - nginx_default
       - java-db
 networks:
-#  nginx_default:
-#    external: true
+  nginx_default:
+    external: true
   java-db:
     driver: bridge
-#
+
 volumes:
   mysqldata:    
