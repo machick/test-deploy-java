@@ -12,16 +12,27 @@ services:
       - DATABASE_PASSWORD=123456
     depends_on: 
       - mysqldb
+      - mongodb
     networks:
-      - nginx_default
+      #- nginx_default
+      - java-db
+  mongodb:
+    container_name: mongodb
+    restart: unless-stopped
+    image: mongo:latest
+    ports:
+     - "27017:27017"
+    volumes:
+     - ./data/db:/data/db
+    hostname: mongodb
+    networks:
+      #- nginx_default
       - java-db
 
   mysqldb: 
     image: mysql:8.0.28
     restart: unless-stopped
-    
     container_name: mysqldb
-    
     environment:
        MYSQL_DATABASE: grupo4
        MYSQL_ROOT_PASSWORD: 123456
@@ -29,11 +40,11 @@ services:
       - mysqldata:/var/lib/mysql
       
     networks:
-      - nginx_default
+      #- nginx_default
       - java-db
 networks:
-  nginx_default:
-    external: true
+  #nginx_default:
+   # external: true
   java-db:
     driver: bridge
 
