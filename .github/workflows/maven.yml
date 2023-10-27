@@ -74,5 +74,5 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         #docker cp dist/. angular-v1:/usr/share/nginx/html
         script: |
-          docker cp /home/machi/cicd/target/tpi-0.0.1-SNAPSHOT.jar java-v1:/usr/local/lib/app.jar
+          docker cp /home/machi/cicd/tpi/target/tpi-0.0.1-SNAPSHOT.jar java-v1:/usr/local/lib/app.jar
           docker restart java-v1
