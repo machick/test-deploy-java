@@ -10,8 +10,8 @@ services:
       - DATABASE_URL=jdbc:mysql://mysqldb:3306/grupo4?allowPublicKeyRetrieval=true
       - DATABASE_USERNAME=root
       - DATABASE_PASSWORD=123456
-    ports:
-     - "8080:8080"  
+    #ports:
+    # - "8080:8080"  
     depends_on: 
       - mysqldb
       - mongodb

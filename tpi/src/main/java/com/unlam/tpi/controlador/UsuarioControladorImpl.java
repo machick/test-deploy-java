@@ -17,7 +17,7 @@ public class UsuarioControladorImpl implements UsuarioControlador {
 	@Override
 	@GetMapping("/index")
 	public String bienvenido() {
-		return "¡Bienvenido al índice de la API 02.26!";
+		return "¡Bienvenido al índice de la API 03.19!";
 	}
 
 	@Override       
