@@ -62,7 +62,7 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         # ssh key private de alguien que tenga permiso para entrar al server
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: target/*
+        source: tpi/target/*
         target: /home/machi/cicd
     - uses: appleboy/ssh-action@v1.0.0
       with:
