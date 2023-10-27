@@ -52,7 +52,7 @@ jobs:
         path: tpi/target
     - name: executing remote ssh commands using ssh key
       run: ls
-      working-directory: dist
+      working-directory: target
     - name: copy file via ssh key
       uses: appleboy/scp-action@v0.1.4
       with:
